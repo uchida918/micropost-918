@@ -15,7 +15,8 @@
       <li class="<%= 'active' if current_page?(user_path(@user)) %>"><%= link_to user_path(@user) do %>Microposts <span class="badge"><%= @count_microposts %></span><% end %></li>
       <li class="<%= 'active' if current_page?(followings_user_path(@user)) %>"><%= link_to followings_user_path(@user) do %>Followings <span class="badge"><%= @count_followings %></span><% end %></li>
       <li class="<%= 'active' if current_page?(followers_user_path(@user)) %>"><%= link_to followers_user_path(@user) do %>Followers <span class="badge"><%= @count_followers %></span><% end %></li>
+      <li class="<%= 'active' if current_page?(fav_microposts_user_path(@user)) %>"><%= link_to fav_microposts_user_path(@user) do %> お気に入り <span class="badge"><%= @count_fav_microposts %></span><% end %></li>
     </ul>
-    <%= render 'users', users: @followings %>
+    <%= render 'microposts/microposts', microposts: @microposts, user: @user %>
   </div>
 </div>
